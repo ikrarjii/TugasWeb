@@ -1,9 +1,9 @@
 body {
-  min-height: 5000px;
+  /* min-height: 5000px; */
 }
 
-.jumbotron {
-  /* background-color: #e2edff; */
+.hero {
+  background-color: #e2edff; 
 }
 
 #projects {
