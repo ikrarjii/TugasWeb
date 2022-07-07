@@ -1,3 +1,20 @@
+<?php
+include "koneksi.php";
+
+if(isset($_POST['kirim'])){
+mysqli_query($koneksi, "INSERT INTO kritik set  
+nama= '$_POST[nama]',
+email = '$_POST[email]',
+phone = '$_POST[phone]',
+pesan = '$_POST[pesan]'");
+
+
+echo "Data barang baru telah tersimpan";
+
+} ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,10 +46,10 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about">About</a>
+              <a class="nav-link" href="hero">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Information</a>
+              <a class="nav-link" href="projects">Information</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
@@ -201,25 +218,25 @@
 
           <div class="col-lg-6">
             
-            <form>
+            <form action="" method = "post">
               <div class="form-group">
                 <label for="nama">Nama</label>
-                <input type="text" class="form-control" id="nama">
+                <input type="text" class="form-control" id="nama" name="nama">
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email">
+                <input type="text" class="form-control" id="email" name="email">
               </div>
               <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="text" class="form-control" id="phone">
+                <input type="text" class="form-control" id="phone" name="phone">
               </div>
               <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control" id="message" rows="3"></textarea>
+                <textarea class="form-control" id="message" name="pesan" rows="3"></textarea>
               </div>
               <div class="form-group">
-                <button type="button" class="btn btn-primary">Send Message</button>
+                <button type="submit" name="kirim"class="btn btn-primary">Kirim</button>
               </div>
             </form>
 
