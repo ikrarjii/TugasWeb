@@ -26,20 +26,26 @@ while($row = mysqli_fetch_assoc($data)){
 
     <table class="table table-striped">
   <tr>
-    <th>Nama</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Pesan</th>
+    <th>No</th>
+    <th>Ket</th>
+    <th>Foto</th>
+    <th>Nama Perpustakaan</th>
+    <th>Deskripsi</th>
+    <th>Alamat</th>
+    <th>Kabupaten</th>
+    <th>Tahun Dibangun</th>
+        
   </tr>
-  <?php foreach($rows as $p) : ?>
   <tr>
-    <td><?= $info["nama"]; ?></td>
-    <td><?= $p["email"]; ?></td>
-    <td><?= $p["phone"]; ?></td>
-    <td><?= $p["pesan"]; ?></td>
+    <td>1.</td>
+    <td>Upload || Hapus</td>
+    <td><img src="sulsel.png" width="50" height="50"></td>
+    <td>Perpustakaan</td>
+    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium voluptate nesciunt dicta pariatur necessitatibus repellat architecto amet tempore illo corrupti qui, culpa, soluta consectetur ipsum sequi ab, dolores error recusandae?</td>
+    <td>Jalan Mesjid Raya</td>
+    <td>Gowa</td>
+    <td>20002</td>
   </tr>
-
-  <?php endforeach; ?>
 </table>
 
 

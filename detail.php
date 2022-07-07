@@ -52,27 +52,30 @@
             <img src="sulsel.png" alt="" class="img-fluid">
         </div>
         <div class="col-md-8">
-            <h1>Nama Perpustakaan</h1>
+            <h1>Perpustakaan Syech Yusuf</h1>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, soluta! Recusandae sint error ab amet quo nisi tempore, nemo cum eum! Voluptate minus aspernatur, autem non tempore earum laborum consectetur commodi ut eius quasi, odit eaque beatae provident? Maxime, quisquam!
             <table class="table table-borderless">
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>Alamat  </td>
+                    <td>:</td>
+                    <td>Jalan Mesjid Raya</td>
                   </tr>
                   <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <td>Kabupaten</td>
+                    <td>:</td>
+                    <td>Gowa</td>
                   </tr>
                   <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                    <td>Tahun di bangun</td>
+                    <td>:</td>
+                    <td>2002</td>                  
                   </tr>
+                  <tr>
+
+                    <td><a class="btn" href="halamanAdmin.php">Edit Data</a></td>
+                  </tr>
+                  
                 </tbody>
               </table>
         </div>

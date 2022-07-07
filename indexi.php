@@ -11,7 +11,15 @@ pesan = '$_POST[pesan]'");
 
 echo "Data barang baru telah tersimpan";
 
-} ?>
+} 
+
+$infor = mysqli_query($koneksi, "SELECT *FROM informasi ");
+$rows = [];
+while($row = mysqli_fetch_assoc($infor)){
+    $rows[] = $row;
+}
+
+?>
 
 
 
@@ -110,86 +118,38 @@ echo "Data barang baru telah tersimpan";
       </svg>
     </section>
 
-    <!--Akhir Information-->
+    <!--Information-->
 
-    <section id="projects">
+    <section class="portfolio bg-light" id="portfolio">
       <div class="container">
-        <div class="row text-center">
-          <div class="col">
-            <h2>Information</h2>
+        <div class="row pt-4 mb-4">
+          <div class="col text-center">
+            <h2>Portfolio</h2>
           </div>
-    
+        </div>
 
-            </div>
-            <div class="row">
-              <div class="col-md mb-4">
-                <div class="card">
-                  <a href="detail.html" class="text-dark text-decoration-none">
-                    <img class="card-img-top" src="sulsel.png" alt="Card image cap">
-                    <div class="card-body text-center">
-                      <h2>Perpustakaan Sulsel</h2>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </a>
 
-                </div>
+        
+        
+        <div class="row">
+          <?php foreach($rows as $info) : ?>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img class="card-img-top" src="sulsel.png" alt="Card image cap">
+              <div class="card-body">
+                <h1 class= "text-center"><?= $info["Nama_Perpus"]; ?></h1>
+                <p class="card-text"><?= $info["Deskripsi"]; ?></p>
               </div>
-    
-              <div class="col-md mb-4">
-                <div class="card">
-                  <img class="card-img-top" src="sulsel.png" alt="Card image cap">
-                  <div class="card-body text-center">
-                    <h2>Perpustakaan Sulsel</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-md mb-4">
-                <div class="card">
-                  <img class="card-img-top" src="sulsel.png" alt="Card image cap">
-                  <div class="card-body text-center">
-                    <h2>Perpustakaan Sulsel</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>   
             </div>
-    
-            <div class="row">
-              <div class="col-md mb-4">
-                <div class="card">
-                  <img class="card-img-top" src="sulsel.png" alt="Card image cap">
-                  <div class="card-body text-center">
-                    <h2>Perpustakaan Sulsel</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div> 
-              <div class="col-md mb-4">
-                <div class="card">
-                  <img class="card-img-top" src="sulsel.png" alt="Card image cap">
-                  <div class="card-body text-center">
-                    <h2>Perpustakaan Sulsel</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-md mb-4">
-                <div class="card">
-                  <img class="card-img-top" src="sulsel.png" alt="Card image cap">
-                  <div class="card-body text-center">
-                    <h2>Perpustakaan Sulsel</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>        
+          </div>
+          <?php endforeach; ?> 
+        </div>
       </div>
-      
     </section>
 
-    <!--Information-->
+
+    
+    <!--Akhir  Information-->
     <!-- Contact -->
     <section class="contact" id="contact">
       <div class="container">
