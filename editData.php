@@ -7,7 +7,30 @@ $rows = [];
 while($row = mysqli_fetch_assoc($data)){
     $rows[] = $row;
 }
-// var_dump($rows);  
+
+if(isset($_POST['submit'])){
+    $nama = $_POST['Nama_Perpus'];
+    $Deskripsi = $_POST['Deskripsi'];
+    $Alamat = $_POST['Alamat'];
+    $Kabupaten = $_POST['Kabupaten'];
+    $Tahun = $_POST['Tahun'];
+    $id = $_POST['id'];
+    
+
+
+    $query =    "UPDATE informasi SET
+    Nama_Perpus = '$nama',
+    Deskripsi = '$Deskripsi',
+    Alamat = '$Alamat',
+    Kabupaten = '$Kabupaten',
+    Tahun = '$Tahun'
+    WHERE id=$id
+    ";
+$cek = mysqli_query($koneksi, $query);
+if($cek > 0){
+    header("location: indexi.php");
+}
+}
 ?>
 
 
@@ -19,7 +42,7 @@ while($row = mysqli_fetch_assoc($data)){
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Edit Data</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <style>
@@ -70,30 +93,43 @@ while($row = mysqli_fetch_assoc($data)){
         <div class="col-md-8">
             <h1><?= $rows[0]["Nama_Perpus"]; ?></h1>
             <?= $rows[0]["Deskripsi"]; ?>
-            <table class="table table-borderless">
-                <tbody>
-                  <tr>
-                    <td>Alamat  </td>
-                    <td>:</td>
-                    <td>Jalan Mesjid Raya</td>
-                  </tr>
-                  <tr>
-                    <td>Kabupaten</td>
-                    <td>:</td>
-                    <td>Gowa</td>
-                  </tr>
-                  <tr>
-                    <td>Tahun di bangun</td>
-                    <td>:</td>
-                    <td>2002</td>                  
-                  </tr>
-                  <tr>
+            <form action="" method="post">
+                <table class="table table-borderless">
+                    <tbody>
+                        <input type="hidden" name="id" value="<?=$rows[0]['id']?>">
+                     <tr>
+                        <td>Nama </td>
+                        <td>:</td>
+                        <td><input type="text" name="Nama_Perpus" id="" value="<?=$rows[0]['Nama_Perpus']?>"></td>
+                      </tr>
+                      <tr>
+                        <td>Deskripsi</td>
+                        <td>:</td>
+                        <td><input type="text" name="Deskripsi" id="" value="<?=$rows[0]['Deskripsi']?>"></td>
+                      </tr>
+                      <tr>
+                        <td>Alamat  </td>
+                        <td>:</td>
+                        <td><input type="text" name="Alamat" id="" value="<?=$rows[0]['Alamat']?>"></td>
+                      </tr>
+                      <tr>
+                        <td>Kabupaten</td>
+                        <td>:</td>
+                        <td><input type="text" name="Kabupaten" id=" " value=" <?=$rows[0]['Kabupaten']?>" ></td>
+                      </tr>
+                      <tr>
+                        <td>Tahun di bangun</td>
+                        <td>:</td>
+                        <td><input type="text" name="Tahun" id="" value="<?=$rows[0]['Tahun']?>"></td>                  
+                      </tr>
+                      <tr>
+                        <td><button type="submit" name="submit" class="btn btn-primary">Ubah Data</button></td>
 
-                    <td><a class="btn btn-primary" href="editData.php?id=<?=$rows[0]['id']?>">Edit Data</a></td>
-                  </tr>
-                  
-                </tbody>
-              </table>
+
+                      </tr>
+                    </tbody>
+                </table>
+            </form>
         </div>
     </div>
   </div>

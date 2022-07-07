@@ -33,7 +33,7 @@ while($row = mysqli_fetch_assoc($data)){
   </tr>
   <?php foreach($rows as $p) : ?>
   <tr>
-    <td><?= $info["nama"]; ?></td>
+    <td><?= $p["nama"]; ?></td>
     <td><?= $p["email"]; ?></td>
     <td><?= $p["phone"]; ?></td>
     <td><?= $p["pesan"]; ?></td>

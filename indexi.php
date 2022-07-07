@@ -139,7 +139,7 @@ while($row = mysqli_fetch_assoc($infor)){
               <div class="card-body">
                 <h1 class= "text-center"><?= $info["Nama_Perpus"]; ?></h1>
                 <p class="card-text"><?= $info["Deskripsi"]; ?></p>
-                <p class="card-text text-center"><a href="detail.php">Detail</a></p>
+                <p class="card-text text-center"><a href="detail.php?id=<?=$info["id"]?>">Detail</a></p>
               </div>
             </div>
           </div>
