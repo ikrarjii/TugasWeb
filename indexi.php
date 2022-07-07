@@ -54,13 +54,13 @@ while($row = mysqli_fetch_assoc($infor)){
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="hero">About</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="projects">Information</a>
+              <a class="nav-link" href="#portfolio">Information</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -124,7 +124,7 @@ while($row = mysqli_fetch_assoc($infor)){
       <div class="container">
         <div class="row pt-4 mb-4">
           <div class="col text-center">
-            <h2>Portfolio</h2>
+            <h2>Information Perpustakaan</h2>
           </div>
         </div>
 
@@ -139,6 +139,7 @@ while($row = mysqli_fetch_assoc($infor)){
               <div class="card-body">
                 <h1 class= "text-center"><?= $info["Nama_Perpus"]; ?></h1>
                 <p class="card-text"><?= $info["Deskripsi"]; ?></p>
+                <p class="card-text text-center"><a href="detail.php">Detail</a></p>
               </div>
             </div>
           </div>
